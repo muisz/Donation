@@ -1,3 +1,5 @@
+using DonationApi.Libs.PaymentGateway;
+using DonationApi.Libs.PaymentGateway.Midtrans;
 using DonationApi.Models;
 using DonationApi.Repositories;
 using DonationApi.Services;
@@ -20,6 +22,9 @@ builder.Services.AddScoped<IDonationRepository, DonationRepository>();
 
 // Services
 builder.Services.AddScoped<IDonationService, DonationService>();
+
+// Libs
+builder.Services.AddSingleton<IPaymentGateway, MidtransPaymentGateway>();
 
 var app = builder.Build();
 

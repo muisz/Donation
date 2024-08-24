@@ -12,5 +12,7 @@ namespace DonationApi.Models
         public double FundingAmount { get; set; }
         public double FundedAmount { get; set; }
         public int DonationTotal { get; set; }
+
+        public ICollection<Volunteer> Volunteers { get; } = new List<Volunteer>();
     }
 }
